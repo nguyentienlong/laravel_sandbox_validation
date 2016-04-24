@@ -35,31 +35,19 @@ class StudentValidator
      */
     public function __construct(Request $request, ValidatorFactory $validatorFactory)
     {
-        //$this->validator = $validatorFactory->make($request->all(), $this->rules, $this->messages);
-        $this->validator = $validatorFactory->make($request->all(), $this->rules);
-
-        $this->validator->after(function() {
-            $this->afterValidator();
-        });
-
+        $this->validator = $validatorFactory->make($request->all(), $this->rules, $this->messages);
     }
-
 
     public function validate(Request $request)
     {
-
-
         if ($this->validator->fails()) {
             $this->throwValidationException($request, $this->validator);
         }
-
-
     }
 
     public function afterValidator()
     {
-        dd($this->validator->passes());
-        $this->validator->errors()->add('extra-key', 'message');
+        //$this->validator->errors()->add('extra-key', 'message');
     }
 
     /**

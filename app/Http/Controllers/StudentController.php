@@ -17,9 +17,6 @@ class StudentController extends Controller
 
     protected $class;
 
-    /**
-     * @param StudentValidator $studentValidator
-     */
     public function __construct(Student $student, StudentValidator $studentValidator, Clazz $clazz)
     {
         $this->student = $student;
@@ -39,14 +36,14 @@ class StudentController extends Controller
         return view('student.create', compact('classes'));
     }
 
-    public function store(StudentRequest $request, Student $student)
+    public function store(Request $request, Student $student)
     {
-        //$this->studentValidator->validate($request);
-        $this->validate($request, [
-                'name' => 'required',
-                'phone_number' => 'required'
-            ]
-        );
+        $this->studentValidator->validate($request);
+        // $this->validate($request, [
+        //         'name' => 'required',
+        //         'phone_number' => 'required'
+        //     ]
+        // );
 
         $student->create($request->all());
 
