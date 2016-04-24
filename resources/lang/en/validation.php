@@ -88,14 +88,14 @@ return [
     |
     */
 
-    // 'custom' => [
-    //     'name' => [
-    //         'required' => 'oh, thieu roi nhe',
-    //     ],
-    //     'phone_number' => [
-    //         'required' => 'so phone hok co ne',
-    //     ],
-    // ],
+    'custom' => [
+        'name' => [
+            'required' => 'oh, thieu roi nhe',
+        ],
+        'phone_number' => [
+            'required' => 'so phone hok co ne',
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------

@@ -24,18 +24,12 @@ class StudentValidator
         'phone_number'=> 'required'
     ];
 
-    // inline message
-    protected $messages = [
-        'name.required' => 'Yeu cau ten',
-        'phone_number.required' => 'so dien thoai khong hop le',
-    ];
-
     /**
      * @param Validator $validator
      */
     public function __construct(Request $request, ValidatorFactory $validatorFactory)
     {
-        $this->validator = $validatorFactory->make($request->all(), $this->rules, $this->messages);
+        $this->validator = $validatorFactory->make($request->all(), $this->rules);
     }
 
     public function validate(Request $request)
