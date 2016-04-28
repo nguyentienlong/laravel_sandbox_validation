@@ -1,4 +1,7 @@
 <?php
+use App\Http\Controllers\ReportController;
+use App\Repositories\ReportType1Repository;
+use App\Repositories\ReportType2Repository;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +45,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::resources(['student' => 'StudentController']);
     // class resources
     Route::resources(['class' => 'ClassController']);
+
+    //Route for report
+    Route::get('accounting/report', 'AccountingController@report');
+
+    Route::get('hr/report', 'HrController@report');
 });
