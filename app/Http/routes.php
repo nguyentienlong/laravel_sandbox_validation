@@ -40,4 +40,6 @@ Route::model('student', 'App\Models\Student'); //we can define call back here - 
 Route::group(['middleware' => ['web']], function () {
     // student resources
     Route::resources(['student' => 'StudentController']);
+    // class resources
+    Route::resources(['class' => 'ClassController']);
 });
