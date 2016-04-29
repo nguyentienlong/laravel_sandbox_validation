@@ -47,7 +47,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::resources(['class' => 'ClassController']);
 
     //Route for report
+    Route::get('report/{type}', 'ReportController@report');
+    //Route for accounting report
     Route::get('accounting/report', 'AccountingController@report');
-
+    // Route for hr report
     Route::get('hr/report', 'HrController@report');
+
 });
